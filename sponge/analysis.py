@@ -73,15 +73,17 @@ def plot_confusion_matrix(
 
     fig,ax = plt.subplots(figsize=(6,6))
     mappable = ax.imshow(s_data, cmap='Blues', vmin=0, vmax=100)
-    fig.colorbar(mappable, ax=ax, shrink=0.8)
+    cb = fig.colorbar(mappable, ax=ax, shrink=0.8)
+    cb.ax.tick_params(labelsize=14)
     ax.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
-    ax.set_xticks([0,1], labels=['0 in first prior', '1 in first prior'])
+    ax.set_xticks([0,1], labels=['0 in first prior', '1 in first prior'],
+        fontsize=14)
     ax.set_yticks([0,1], labels=['0 in second prior', '1 in second prior'],
-        rotation='vertical', va='center')
+        rotation='vertical', va='center', fontsize=14)
     for i in range(2):
         for j in range(2):
             ax.text(i, j, f'{data[i][j]:,d}\n{s_data[i][j]:.2f} %',
-                ha='center', va='center',
+                ha='center', va='center', fontsize=16,
                 c='white' if s_data[i][j] > 50 else 'black')
 
     return ax

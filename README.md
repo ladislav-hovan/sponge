@@ -61,15 +61,30 @@ The features already available are:
 ## Setup
 The requirements are provided in a `requirements.txt` file.
 
+SPONGE can be installed via pip:
+
+``` bash
+pip install netzoopy-sponge
+```
+
+Alternatively, it can be installed by downloading this repository and
+then installing with pip (possibly in interactive mode):
+
+``` bash
+git clone https://github.com/ladislav-hovan/sponge.git
+cd sponge
+pip install -e .
+```
+
 
 ## Usage
 SPONGE comes with a `netzoopy-sponge` command line script:
 
 ``` bash
 # Get information about the available options
-$ netzoopy-sponge --help
+netzoopy-sponge --help
 # Run the pipeline
-$ netzoopy-sponge
+netzoopy-sponge
 ```
 
 The script comes with a lot of options, but the defaults are designed
